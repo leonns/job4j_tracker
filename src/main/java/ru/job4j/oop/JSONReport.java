@@ -4,13 +4,16 @@ public class JSONReport extends TextReport {
 
     @Override
     public String generate(String name, String body) {
-        return super.generate("name : " + name, "body : " +  body);
+        return "{" + System.lineSeparator() + name
+                + " : " + "name" + "," + System.lineSeparator()
+                + body + " : " + "body" + System.lineSeparator()
+                + "}";
     }
 
     public static void main(String[] args) {
 
         JSONReport jsonReport = new JSONReport();
-        String text = jsonReport.generate("Report's name,", "Report's body");
+        String text = jsonReport.generate("name", "body");
         System.out.println(text);
     }
 }
