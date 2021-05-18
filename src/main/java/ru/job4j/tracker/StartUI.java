@@ -12,9 +12,10 @@ public class StartUI {
         String current = currentDateTimeFormat.format(formatter);
         System.out.println("Текущие дата и время после форматирования: " + current);*/
 
-        Item item = new Item();
-        System.out.println(item);
-
+        Item item = new Item(1, "Item 1");
+        Tracker tracker = new Tracker();
+        tracker.add(item);
+        System.out.println(tracker.findById(1));
     }
 
 }
